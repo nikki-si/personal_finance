@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "amount": 1500.0,
+        "category": "Продукты",
+        "description": "Пятёрочка"
+    },
+    {
+        "id": 2,
+        "amount": 500.0,
+        "category": "Транспорт",
+        "description": "Метро"
+    }
+]
