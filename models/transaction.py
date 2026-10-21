@@ -2,8 +2,13 @@
 
 class Transaction:
     """Класс, описывающий одну финансовую операцию (расход)."""
-    
-    def __init__(self, transaction_id: int, amount: float, category: str, description: str):
+
+    def __init__(
+            self,
+            transaction_id: int,
+            amount: float,
+            category: str,
+            description: str):
         self.id = transaction_id
         self.amount = amount
         self.category = category
