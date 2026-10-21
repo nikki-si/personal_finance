@@ -1,0 +1,19 @@
+body {
+    min-height: 100vh;
+}
+
+.transaction-card {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+body {
+    min-height: 100vh;
+}
+
+.finance-logo {
+    width: 80px;
+    height: auto;
+    margin: 1rem;
+}

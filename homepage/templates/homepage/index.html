@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Главная — Личные финансы{% endblock %}
+
+{% block content %}
+<h1 class="display-4">Личные финансы</h1>
+<p class="lead">Приложение для учёта расходов.</p>
+<p>Основные разделы:</p>
+<a href="{% url 'transactions:list' %}" class="btn btn-primary me-2">
+    Транзакции
+</a>
+<a href="{% url 'stats:statistics' %}" class="btn btn-secondary">
+    Статистика
+</a>
+{% endblock %}

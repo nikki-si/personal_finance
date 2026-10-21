@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}
+{% if transaction %}
+Транзакция №{{ transaction.id }} — Личные финансы
+{% else %}
+Транзакция не найдена — Личные финансы
+{% endif %}
+{% endblock %}
+
+{% block content %}
+{% if transaction %}
+<div class="card">
+    <div class="card-body">
+        <h1 class="card-title">Транзакция №{{ transaction.id }}</h1>
+        <p class="card-text"><strong>Сумма:</strong> {{ transaction.amount }} руб.</p>
+        <p class="card-text"><strong>Категория:</strong> {{ transaction.category }}</p>
+        <p class="card-text"><strong>Описание:</strong> {{ transaction.description }}</p>
+    </div>
+</div>
+{% else %}
+<h1 class="text-danger">Транзакция не найдена</h1>
+<p>Транзакция с указанным идентификатором отсутствует.</p>
+{% endif %}
+
+<a href="{% url 'transactions:list' %}" class="btn btn-outline-secondary mt-3">
+    ← к списку транзакций
+</a>
+{% endblock %}
