@@ -1,21 +1,23 @@
-# models-transaction.py
+# models/transaction.py
+
 
 class Transaction:
     """Класс, описывающий одну финансовую операцию (расход)."""
 
     def __init__(
-            self,
-            transaction_id: int,
-            amount: float,
-            category: str,
-            description: str):
+        self,
+        transaction_id: int,
+        amount: float,
+        category: str,
+        description: str,
+    ):
         self.id = transaction_id
         self.amount = amount
         self.category = category
         self.description = description
 
     def __str__(self) -> str:
-        return f"[{self.id}] {self.category}: {self.amount} руб. ({self.description})"
+        return f"[{self.id}] {self.category}: {self.amount} руб."
 
     @classmethod
     def from_dict(cls, data: dict) -> 'Transaction':
@@ -24,7 +26,7 @@ class Transaction:
             transaction_id=data["id"],
             amount=data["amount"],
             category=data["category"],
-            description=data["description"]
+            description=data["description"],
         )
 
     def to_dict(self) -> dict:
@@ -33,5 +35,5 @@ class Transaction:
             "id": self.id,
             "amount": self.amount,
             "category": self.category,
-            "description": self.description
+            "description": self.description,
         }

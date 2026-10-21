@@ -49,9 +49,15 @@ def transaction_detail(request, transaction_id):
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Транзакция №{transaction.id}</h5>
-        <p class="card-text"><strong>Сумма:</strong> {transaction.amount} руб.</p>
-        <p class="card-text"><strong>Категория:</strong> {transaction.category}</p>
-        <p class="card-text"><strong>Описание:</strong> {transaction.description}</p>
+        <p class="card-text">
+          <strong>Сумма:</strong> {transaction.amount} руб.
+        </p>
+        <p class="card-text">
+          <strong>Категория:</strong> {transaction.category}
+        </p>
+        <p class="card-text">
+          <strong>Описание:</strong> {transaction.description}
+        </p>
         <a href="/transactions/" class="btn btn-outline-secondary">
         ← к списку транзакций
         </a>

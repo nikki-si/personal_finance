@@ -1,5 +1,9 @@
 # main.py
-from finance_manager import load_transactions, save_transactions, get_total_expenses
+from finance_manager import (
+    load_transactions,
+    save_transactions,
+    get_total_expenses,
+)
 from models.transaction import Transaction
 
 
