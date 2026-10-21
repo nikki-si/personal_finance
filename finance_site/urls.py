@@ -23,3 +23,4 @@ urlpatterns = [
     path("transactions/", include("transactions.urls")),
     path("stats/", include("stats.urls")),
 ]
+handler404 = "homepage.views.page_not_found"
