@@ -4,8 +4,14 @@
 
 {% block content %}
 <h1>Статистика расходов</h1>
-<p>Общая сумма расходов: <strong>{{ total }} руб.</strong></p>
 
+<p>Всего транзакций: <strong>{{ total_count }}</strong></p>
+<p>Общая сумма расходов: <strong>{{ total_amount }} руб.</strong></p>
+<p>Средняя сумма транзакции: <strong>{{ avg_amount|floatformat:2 }} руб.</strong></p>
+<p>Минимальная транзакция: <strong>{{ min_amount }} руб.</strong></p>
+<p>Максимальная транзакция: <strong>{{ max_amount }} руб.</strong></p>
+
+<h2>Суммы по категориям</h2>
 <table class="table table-striped">
     <thead>
         <tr><th>Категория</th><th>Сумма</th></tr>

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Топ-5 транзакций — Личные финансы{% endblock %}
+
+{% block content %}
+<h1>Топ-5 самых дорогих транзакций</h1>
+
+<ol class="list-group list-group-numbered">
+    {% for t in transactions %}
+    <li class="list-group-item">
+        <strong>{{ t.amount }} руб.</strong> — {{ t.category }} ({{ t.description }})
+    </li>
+    {% empty %}
+    <li class="list-group-item">Транзакций нет.</li>
+    {% endfor %}
+</ol>
+
+<a href="{% url 'transactions:list' %}" class="btn btn-outline-secondary mt-3">
+    ← к списку транзакций
+</a>
+{% endblock %}

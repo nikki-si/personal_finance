@@ -60,7 +60,7 @@ FROM transactions
 ORDER BY amount DESC
 LIMIT 1;
 
--- Все, кроме "Транспорт" (WHERE + NOT)
+-- 12. Все, кроме "Транспорт" (WHERE + NOT)
 SELECT t.id, t.amount, c.name AS category
 FROM transactions t
 JOIN categories c ON t.category_id = c.id

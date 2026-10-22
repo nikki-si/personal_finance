@@ -1,14 +1,14 @@
 [
-    {
-        "id": 1,
-        "amount": 1500.0,
-        "category": "Продукты",
-        "description": "Пятёрочка"
-    },
-    {
-        "id": 2,
-        "amount": 500.0,
-        "category": "Транспорт",
-        "description": "Метро"
-    }
+    {"id": 1, "amount": 1500.0, "category": "Продукты", "description": "Пятёрочка"},
+    {"id": 2, "amount": 500.0, "category": "Транспорт", "description": "Метро"},
+    {"id": 3, "amount": 50000.0, "category": "Аренда", "description": "Аренда квартиры"},
+    {"id": 4, "amount": 300.0, "category": "Развлечения", "description": "Кино"},
+    {"id": 5, "amount": 1200.0, "category": "Одежда", "description": "Кроссовки"},
+    {"id": 6, "amount": 800.0, "category": "Здоровье", "description": "Аптека"},
+    {"id": 7, "amount": 450.0, "category": "Продукты", "description": "Магнит"},
+    {"id": 8, "amount": 2000.0, "category": "Кафе", "description": "Ресторан"},
+    {"id": 9, "amount": 100.0, "category": "Транспорт", "description": "Автобус"},
+    {"id": 10, "amount": 3500.0, "category": "Аренда", "description": "Коммуналка"},
+    {"id": 11, "amount": 700.0, "category": "Развлечения", "description": "Концерт"},
+    {"id": 12, "amount": 650.0, "category": "Здоровье", "description": "Витамины"}
 ]

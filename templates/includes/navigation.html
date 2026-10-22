@@ -1,5 +1,9 @@
 <nav class="nav container mt-2">
     <a class="nav-link" href="{% url 'homepage:index' %}">Главная</a>
     <a class="nav-link" href="{% url 'transactions:list' %}">Транзакции</a>
+    <a class="nav-link" href="{% url 'transactions:by_category' %}">Поиск по категории</a>
+    <a class="nav-link" href="{% url 'transactions:over' %}">Сумма &gt; N</a>
     <a class="nav-link" href="{% url 'stats:statistics' %}">Статистика</a>
+    <a class="nav-link" href="{% url 'transactions:top' %}">Топ-5</a>
+    <a class="nav-link" href="{% url 'stats:expensive' %}">Дорогие категории</a>
 </nav>

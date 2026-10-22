@@ -6,4 +6,5 @@ app_name = "stats"
 
 urlpatterns = [
     path("", views.statistics_view, name="statistics"),
+    path("expensive/", views.expensive_categories, name="expensive"),
 ]

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Дорогие категории — Личные финансы{% endblock %}
+
+{% block content %}
+<h1>Категории с суммой расходов больше 500 руб.</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr><th>Категория</th><th>Сумма</th></tr>
+    </thead>
+    <tbody>
+        {% for row in rows %}
+        <tr><td>{{ row.category }}</td><td>{{ row.total }} руб.</td></tr>
+        {% empty %}
+        <tr><td colspan="2">Нет категорий с такой суммой.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="{% url 'stats:statistics' %}" class="btn btn-outline-secondary mt-3">
+    ← к статистике
+</a>
+{% endblock %}
