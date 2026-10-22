@@ -1,31 +1,44 @@
+import sqlite3
+
 from django.shortcuts import render
 
-from finance_manager import load_transactions, get_total_expenses
+DB_PATH = "data/finance.sqlite"
 
 
 def transactions_list(request):
-    transactions = load_transactions()
-
-    total = get_total_expenses(transactions)
-    context = {
-        "transactions": transactions,
-        "total": total,
-    }
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    rows = conn.execute(
+        """
+        SELECT t.id, t.amount, c.name AS category, t.description
+        FROM transactions t
+        JOIN categories c ON t.category_id = c.id
+        ORDER BY t.id
+        """
+    ).fetchall()
+    conn.close()
+    context = {"transactions": rows}
     return render(request, "transactions/transaction_list.html", context)
 
 
 def transaction_detail(request, transaction_id):
-    transactions = load_transactions()
-    transaction = None
-    for t in transactions:
-        if t.id == transaction_id:
-            transaction = t
-            break
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    row = conn.execute(
+        """
+        SELECT t.id, t.amount, c.name AS category, t.description
+        FROM transactions t
+        JOIN categories c ON t.category_id = c.id
+        WHERE t.id = ?
+        """,
+        [transaction_id],
+    ).fetchone()
+    conn.close()
 
-    context = {"transaction": transaction}
+    context = {"transaction": row}
     return render(
         request,
         "transactions/transaction_detail.html",
         context,
-        status=404 if transaction is None else 200,
+        status=404 if row is None else 200,
     )

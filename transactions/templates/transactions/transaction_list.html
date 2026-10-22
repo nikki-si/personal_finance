@@ -5,12 +5,13 @@
 {% block content %}
 <h1>Транзакции</h1>
 <p>Всего транзакций: <strong>{{ transactions|length }}</strong></p>
-<p>Общая сумма расходов: <strong>{{ total }} руб.</strong></p>
 
 <ul class="list-group">
     {% for t in transactions %}
     <li class="list-group-item">
-        <a href="{% url 'transactions:detail' t.id %}">{{ t }}</a>
+        <a href="{% url 'transactions:detail' t.id %}">
+            [{{ t.id }}] {{ t.category }}: {{ t.amount }} руб. ({{ t.description }})
+        </a>
     </li>
     {% empty %}
     <li class="list-group-item">Транзакции не найдены.</li>
