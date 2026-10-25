@@ -60,8 +60,16 @@ FROM transactions
 ORDER BY amount DESC
 LIMIT 1;
 
--- 12. Все, кроме "Транспорт" (WHERE + NOT)
+-- Все, кроме "Транспорт" (WHERE + NOT)
 SELECT t.id, t.amount, c.name AS category
 FROM transactions t
 JOIN categories c ON t.category_id = c.id
 WHERE c.name != 'Транспорт';
+
+-- Категории с более чем одной транзакцией (HAVING + COUNT)
+SELECT c.name AS category, COUNT(t.id) AS count
+FROM categories c
+JOIN transactions t ON t.category_id = c.id
+GROUP BY c.id, c.name
+HAVING COUNT(t.id) > 1
+ORDER BY count DESC;
