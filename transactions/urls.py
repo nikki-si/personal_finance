@@ -5,9 +5,9 @@ from . import views
 app_name = "transactions"
 
 urlpatterns = [
-    path("", views.transactions_list, name="list"),
-    path("by-category/", views.transactions_by_category, name="by_category"),
-    path("over/", views.transactions_over, name="over"),
-    path("<int:transaction_id>/", views.transaction_detail, name="detail"),
-    path("top/", views.transactions_top, name="top"),
+    path("", views.transaction_list, name="list"),
+    path("<int:pk>/", views.transaction_detail, name="detail"),
+    path("by-category/", views.transaction_by_category, name="by_category"),
+    path("over/", views.transaction_over, name="over"),
+    path("top/", views.transaction_top, name="top"),
 ]
